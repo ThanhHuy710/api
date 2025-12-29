@@ -28,7 +28,15 @@ app.get('/api/v/de1', (req, res) => {
     ];
     res.json({ "DS_XE_CU": ds_xe });
 });
-
+app.all('/api/v/de2', (req, res) => {
+    const ds_xe_moi = [
+        { "BIEN_SO": "60A-88888", "TEN_XE": "Ford Ranger Wildtrak", "GIA_BAN": 950000000 },
+        { "BIEN_SO": "72B-12345", "TEN_XE": "Hyundai SantaFe", "GIA_BAN": 1150000000 },
+        { "BIEN_SO": "65C-99999", "TEN_XE": "Kia Carnival", "GIA_BAN": 1450000000 },
+        { "BIEN_SO": "51D-00001", "TEN_XE": "VinFast VF9", "GIA_BAN": 1900000000 }
+    ];
+    res.json({ "DS_XE_CU": ds_xe_moi });
+});
 // 2. API Đăng nhập linh hoạt (Sửa lỗi 500)
 app.all('/api/v/Login_de1', (req, res) => {
     try {
