@@ -28,14 +28,33 @@ app.get('/api/v/de1', (req, res) => {
     ];
     res.json({ "DS_XE_CU": ds_xe });
 });
+// --- ĐỀ 3: CHỦ ĐỀ CẦU THỦ (Cấu trúc mới) ---
 app.all('/api/v/de2', (req, res) => {
-    const ds_xe_moi = [
-        { "BIEN_SO": "60A-88888", "TEN_XE": "Ford Ranger Wildtrak", "GIA_BAN": 950000000 },
-        { "BIEN_SO": "72B-12345", "TEN_XE": "Hyundai SantaFe", "GIA_BAN": 1150000000 },
-        { "BIEN_SO": "65C-99999", "TEN_XE": "Kia Carnival", "GIA_BAN": 1450000000 },
-        { "BIEN_SO": "51D-00001", "TEN_XE": "VinFast VF9", "GIA_BAN": 1900000000 }
+    const ds_cau_thu = [
+        { 
+            "MA_SO": "CT001", 
+            "HO_TEN": "Lionel Messi", 
+            "CAU_LAC_BO": "Inter Miami", 
+            "SO_AO": 10,
+            "LUONG_TUAN": 1200000.50 // Kiểu số thực
+        },
+        { 
+            "MA_SO": "CT002", 
+            "HO_TEN": "Cristiano Ronaldo", 
+            "CAU_LAC_BO": "Al Nassr", 
+            "SO_AO": 7,
+            "LUONG_TUAN": 3400000.75
+        },
+        { 
+            "MA_SO": "CT003", 
+            "HO_TEN": "Kylian Mbappé", 
+            "CAU_LAC_BO": "Real Madrid", 
+            "SO_AO": 9,
+            "LUONG_TUAN": 1500000.00
+        }
     ];
-    res.json({ "DS_XE_CU": ds_xe_moi });
+    // Key bao ngoài là "DANH_SACH_CAU_THU"
+    res.json({ "DANH_SACH_CAU_THU": ds_cau_thu });
 });
 // 2. API Đăng nhập linh hoạt (Sửa lỗi 500)
 app.all('/api/v/Login_de1', (req, res) => {
